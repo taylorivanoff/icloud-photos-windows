@@ -134,8 +134,6 @@ function createTray() {
   tray.setContextMenu(Menu.buildFromTemplate([
     { label: `Show ${APP_NAME}`, click: () => { if (!mainWindow) createWindow(); mainWindow.show(); } },
     { type: 'separator' },
-    { label: 'View Photos', click: () => { if (!mainWindow) createWindow(); mainWindow.show(); } },
-    { type: 'separator' },
     { label: 'Check for Updates', click: () => autoUpdater.checkForUpdatesAndNotify() },
     { label: 'Quit', click: () => { isQuitting = true; app.quit(); } }
   ]));
@@ -143,11 +141,7 @@ function createTray() {
 }
 
 function setupJumpList() {
-  app.setJumpList([
-    { type: 'tasks', items: [
-      { type: 'task', title: 'View Photos', description: 'Open iCloud Photos', program: process.execPath, args: `${PROTOCOL}://open`, iconPath: process.execPath, iconIndex: 0 }
-    ]}
-  ]);
+  app.setJumpList([]);
 }
 
 function setupAutoUpdater() {
