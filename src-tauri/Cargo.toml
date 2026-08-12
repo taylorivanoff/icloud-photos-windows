@@ -1,6 +1,6 @@
 [package]
 name = "icloud-photos"
-version = "2.0.0"
+version = "2.0.1"
 description = "iCloud Photos for Windows (Tauri)"
 authors = ["Taylor Ivanoff"]
 edition = "2021"
